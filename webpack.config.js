@@ -13,17 +13,17 @@ module.exports = {
     output: {
         path: distPath,
         filename: 'yewchat.js',
-        webassemblyModuleFilename: 'yewchat_bg.wasm',
+        webassemblyModuleFilename: '[hash].wasm',
     },
     plugins: [
         new CopyWebpackPlugin({
             patterns: [{ from: './static', to: distPath }],
         }),
-        new WasmPackPlugin({
-            crateDirectory: '.',
-            extraArgs: '-- --features wee_alloc',
-            outName: 'yewchat',
-        }),
+        // new WasmPackPlugin({
+        //     crateDirectory: '.',
+        //     extraArgs: '-- --features wee_alloc',
+        //     outName: 'yewchat',
+        // }),
     ],
     experiments: {
         asyncWebAssembly: true,
