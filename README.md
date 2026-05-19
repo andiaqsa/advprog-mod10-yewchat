@@ -57,3 +57,78 @@ Aplikasi berhasil dijalankan dengan tampilan login dan chat yang fungsional:
 ![alt text](image-5.png)
  
 ---
+
+
+## Experiment 3.2: Be Creative!
+ 
+### Deskripsi
+ 
+Pada bagian ini, saya menambahkan berbagai kreativitas pada webclient untuk membuat pengalaman chat yang lebih menarik dan personal. Inspirasi dari pernyataan WEF bahwa kreativitas adalah kunci untuk bersaing di era AI dalam dunia kerja masa depan.
+ 
+Referensi: [WEF — Creativity as Key Workforce Skill](https://www.weforum.org/agenda/2020/11/ai-automation-creativity-workforce-skill-fute-of-work/)
+ 
+### Perubahan yang Dilakukan
+ 
+**1. Desain UI Dark Mode Modern**
+ 
+Tampilan dirancang ulang dengan tema gelap menggunakan Tailwind CSS. Warna utama biru-gelap (`gray-900`, `gray-800`) memberikan kesan profesional dan nyaman untuk mata saat digunakan lama.
+ 
+**2. Halaman Login yang Elegan**
+ 
+Halaman login dibuat dengan card terpusat di tengah layar, dilengkapi:
+- Ikon emoji 💬 sebagai identitas visual aplikasi
+- Teks sambutan dalam Bahasa Indonesia
+- Input field dengan efek focus border biru
+- Tombol "Masuk ke Chat →" dengan hover effect
+**3. Sidebar Daftar User Online**
+ 
+Sidebar kiri menampilkan daftar semua user yang sedang terhubung secara real-time, dengan:
+- Indikator titik hijau (●) menandakan status online
+- Update otomatis saat user bergabung atau keluar
+**4. Bubble Chat Dua Arah**
+ 
+Pesan dibedakan secara visual:
+- **Pesan sendiri** — bubble biru, rata kanan, tanpa nama pengirim
+- **Pesan orang lain** — bubble abu-abu gelap, rata kiri, dengan nama pengirim di atas
+**5. Teks Antarmuka Bahasa Indonesia**
+ 
+Semua teks UI menggunakan Bahasa Indonesia ("Ketik pesan...", "Kirim", "Logged in as", "Online") untuk pengalaman yang lebih personal dan lokal.
+ 
+**6. Routing Halaman dengan Yew Router**
+ 
+Menggunakan `yew-router` untuk navigasi SPA:
+- `/` → halaman Login
+- `/chat` → halaman Chat
+- Username disimpan di `sessionStorage` dan diambil saat masuk halaman chat
+### Penjelasan Teknis Kreativitas
+ 
+Kreativitas pada bagian ini tidak hanya terbatas pada estetika visual, tetapi juga pada **arsitektur kode**. Saya memilih pendekatan yang bersih dengan memisahkan komponen ke dalam modul terpisah:
+ 
+```
+src/
+  lib.rs              — entry point WASM
+  components/
+    mod.rs            — daftar modul
+    app.rs            — routing utama
+    login.rs          — halaman login
+    chat.rs           — halaman chat
+    types.rs          — struktur data pesan
+```
+ 
+Pemisahan ini membuat kode lebih mudah dibaca, diuji, dan dikembangkan — prinsip yang sama pentingnya dengan kreativitas visual dalam rekayasa perangkat lunak.
+ 
+### Hasil
+ 
+> **Screenshot:** 
+
+![alt text](image-6.png)
+
+![alt text](image-7.png)
+
+![alt text](image-8.png)
+
+![alt text](image-9.png)
+
+![alt text](image-10.png)
+ 
+---
